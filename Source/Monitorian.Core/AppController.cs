@@ -74,6 +74,7 @@ public abstract class AppController
 
 		WindowPainter.ApplyInitialTheme();
 		NotifyIconContainer.ShowIcon(WindowPainter.GetIconPath(), ProductInfo.Title);
+		_ = TrayIconPromoter.PromoteAsync(TimeSpan.FromSeconds(5));
 		WindowPainter.ThemeChanged += (_, _) =>
 		{
 			NotifyIconContainer.ShowIcon(WindowPainter.GetIconPath());

@@ -48,6 +48,9 @@ public class StartupAgent : IDisposable
 			? (IStartupWorker)new BridgeWorker(taskId: startupTaskId)
 			: (IStartupWorker)new RegistryWorker(name: name, path: Assembly.GetEntryAssembly().Location);
 
+		// Keep an existing "start on sign in" registration pointing at this executable.
+		(_worker as RegistryWorker)?.RepairIfStale();
+
 		_isHideExpected = standardArguments?.Contains(HideOption) is true;
 		return (success: true, null);
 	}

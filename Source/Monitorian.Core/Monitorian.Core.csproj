@@ -105,6 +105,7 @@
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\SystemInfo.cs" />
     <Compile Include="Models\TempService.cs" />
+    <Compile Include="Models\TrayIconPromoter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Invariant.Designer.cs">
       <AutoGen>True</AutoGen>
